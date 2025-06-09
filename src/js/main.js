@@ -33,16 +33,16 @@ navObserver.observe(home);
 // Reveal "Home" section (Window Load Event)
 
 window.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-      home.classList.remove("opacity-0", "translate-y-40");
-      home.classList.add("opacity-100", "translate-y-0", "ease-out");
-    }, 500);
+  setTimeout(() => {
+    home.classList.remove("opacity-0", "translate-y-32");
+    home.classList.add("opacity-100", "translate-y-0", "ease-out");
+  }, 500);
 
   setTimeout(() => {
     svg.classList.remove("opacity-0", "translate-x-40");
     svg.classList.add("opacity-100", "translate-x-0", "ease-out");
   }, 500);
-  });
+});
 
 //Reveal sections
 
@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
 const allSections = document.querySelectorAll("section:not(#home)");
 
 const revealSection = function (entries, observer) {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
 
     entry.target.classList.remove("opacity-0", "translate-y-20");
@@ -78,12 +78,24 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
 
-  section.classList.add("opacity-0", "translate-y-20", "ease-out", "transition-all", "duration-700", "transform");
+  section.classList.add(
+    "opacity-0",
+    "translate-y-20",
+    "ease-out",
+    "transition-all",
+    "duration-700",
+    "transform"
+  );
 
   if (section.id === "skills") {
     const skillItems = section.querySelectorAll("li");
-    skillItems.forEach(item => {
-      item.classList.add("opacity-0", "translate-x-20", "transition-all", "duration-700");
+    skillItems.forEach((item) => {
+      item.classList.add(
+        "opacity-0",
+        "translate-x-20",
+        "transition-all",
+        "duration-700"
+      );
     });
   }
 });
