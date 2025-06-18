@@ -9,9 +9,12 @@ const homeTitle = document.getElementById("home-title");
 const homeText = document.getElementById("home-text");
 const aboutSection = document.getElementById("about");
 const skillsSection = document.getElementById("skills");
-const contactBtn = document.getElementById("contactBtn");
+const contactBtn = document.querySelectorAll(".contact-trigger");
 const contactModal = document.getElementById("contactModal");
 const closeModalButton = document.getElementById("closeModal");
+const burgerMenu = document.getElementById("burgerMenu");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMobileMenuBtn = document.getElementById("closeMobileMenu");
 
 // Sticky navigation (Intersection Observer API)
 const navHeight = nav.getBoundingClientRect().height;
@@ -31,20 +34,21 @@ const navObserver = new IntersectionObserver(stickyNav, {
 navObserver.observe(home);
 
 // Reveal "Home" section (Window Load Event)
-
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
-    home.classList.remove("opacity-0", "translate-y-32");
-    home.classList.add("opacity-100", "translate-y-0", "ease-out");
-  }, 500);
-
-  setTimeout(() => {
-    svg.classList.remove("opacity-0", "translate-x-40");
-    svg.classList.add("opacity-100", "translate-x-0", "ease-out");
+    document.querySelectorAll("[data-animate]").forEach((el) => {
+      el.classList.remove("opacity-0", "translate-y-32", "translate-x-32");
+      el.classList.add(
+        "opacity-100",
+        "translate-y-0",
+        "translate-x-0",
+        "ease-out"
+      );
+    });
   }, 500);
 });
 
-//Reveal sections
+//Reveal other sections
 
 // Select all sections except #home
 const allSections = document.querySelectorAll("section:not(#home)");
@@ -100,17 +104,79 @@ allSections.forEach(function (section) {
   }
 });
 
-// MODAL WINDOW
-contactBtn.addEventListener("click", () => {
-  contactModal.classList.remove("hidden");
-});
+// Modal window
+
+// Reset the contact form fields
+function resetContactForm() {
+  const form = contactModal.querySelector("form");
+  if (form) form.reset();
+}
+
+contactBtn.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    contactModal.classList.remove("hidden");
+    setTimeout(() => {
+      contactModal.querySelector("input, textarea, button")?.focus();
+    }, 100);
+  })
+);
 
 closeModalButton.addEventListener("click", () => {
   contactModal.classList.add("hidden");
+  resetContactForm();
 });
 
 contactModal.addEventListener("click", (e) => {
   if (e.target === contactModal) {
     contactModal.classList.add("hidden");
+    resetContactForm();
   }
 });
+
+// === Escape key to close modal ===
+document.addEventListener("keydown", (e) => {
+  if (
+    !contactModal.classList.contains("hidden") &&
+    (e.key === "Escape" || e.key === "Esc")
+  ) {
+    contactModal.classList.add("hidden");
+    resetContactForm();
+  }
+});
+
+// Projects section
+
+// Target all videos in the projects section
+document.querySelectorAll("#projects video").forEach((video) => {
+  video.addEventListener("mouseenter", () => {
+    video.play();
+  });
+  video.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+  video.addEventListener("click", () => {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    }
+  });
+});
+
+// Burger mobile menu
+
+function openMobileMenu() {
+  mobileMenu.classList.remove("opacity-0", "pointer-events-none");
+  mobileMenu.classList.add("opacity-100");
+}
+function closeMobileMenu() {
+  mobileMenu.classList.add("opacity-0", "pointer-events-none");
+  mobileMenu.classList.remove("opacity-100");
+}
+
+burgerMenu.addEventListener("click", openMobileMenu);
+closeMobileMenuBtn.addEventListener("click", closeMobileMenu);
+
+// Close mobile menu
+mobileMenu
+  .querySelectorAll("a,button")
+  .forEach((el) => el.addEventListener("click", closeMobileMenu));

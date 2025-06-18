@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Yann Letertre - Fullstack web developer portfolio"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="dist/output.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/img/code-icon.svg" />
+    <title>Yann Letertre</title>
+  </head>
+
+  <body class="font-sans text-white">
+    <header
+      id="header"
+      class="sticky top-0 w-full z-10 border-b-1 border-[#ddd]"
+    >
+      <!-- NAV -->
+      <nav
+        id="nav"
+        role="navigation"
+        class="bg-gray-900 py-4 px-4 sm:px-6 md:px-8 flex items-center justify-between w-full z-10"
+      >
+        <!-- Burger menu button-->
+        <button
+          id="burgerMenu"
+          class="sm:hidden flex items-center px-3 py-2 border rounded text-gray-300 border-gray-400 hover:text-white hover:border-white"
+          aria-label="Open menu"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <!-- Desktop menu -->
+        <div
+          class="hidden sm:flex flex flex-grow justify-center space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-16 gap-2 text-base md:text-lg text-gray-300 hover:text-white font-semibold"
+        >
+          <a
+            href="#home"
+            class="flex items-center rounded bg-gray-900 hover:bg-gray-700 px-6 py-2"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="flex items-center rounded bg-gray-900 hover:bg-gray-700 px-6 py-2"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="flex items-center rounded bg-gray-900 hover:bg-gray-700 px-6 py-2"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="flex items-center rounded bg-gray-900 hover:bg-gray-700 px-6 py-2"
+            >Projects</a
+          >
+        </div>
+        <!-- Contact button -->
+        <div class="flex items-center">
+          <button
+            type="button"
+            class="contact-trigger items-center bg-gray-800 hover:bg-indigo-700 text-base md:text-lg text-white font-semibold px-6 py-2 rounded shadow-md transition transform hover:scale-105"
+          >
+            Contact
+          </button>
+        </div>
+        <!-- Mobile menu -->
+        <div
+          id="mobileMenu"
+          class="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 flex flex-col items-center justify-center gap-8 text-xl text-white sm:hidden transition-all duration-300 opacity-0 pointer-events-none"
+        >
+          <button
+            id="closeMobileMenu"
+            class="absolute top-4 right-6 text-gray-400 text-4xl hover:text-red-500 transition-colors"
+            aria-label="Close menu"
+          >
+            &times;
+          </button>
+          <a
+            href="#"
+            class="px-6 py-2 text-gray-300 hover:text-white"
+            onclick="closeMobileMenu()"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="px-6 py-2 text-gray-300 hover:text-white"
+            onclick="closeMobileMenu()"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="px-6 py-2 text-gray-300 hover:text-white"
+            onclick="closeMobileMenu()"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="px-6 py-2 text-gray-300 hover:text-white"
+            onclick="closeMobileMenu()"
+            >Projects</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+
+    <main class="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-600">
+      <!-- HOME SECTION -->
+
+      <section
+        id="home"
+        class="h-screen flex flex-col items-center justify-center border-b border-gray-400 px-4 sm:px-8 md:px-26 overflow-hidden"
+      >
+        <!-- Avatar -->
+        <div
+          data-animate
+          class="flex justify-center transform translate-y-32 opacity-0 transition-all duration-700"
+        >
+          <img
+            id="home-image"
+            src="assets/img/avatar.png"
+            loading="lazy"
+            alt="Portrait of Yann Letertre"
+            class="rounded-full w-48 sm:w-60 object-cover border-2 border-white transition-transform transition-shadow transition-colors duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-indigo-600 hover:border-indigo-600"
+          />
+        </div>
+        <div
+          data-animate
+          class="flex flex-col items-center justify-center mt-8 translate-y-32 opacity-0 transition-all duration-700"
+        >
+          <h1
+            id="home-title"
+            class="text-3xl sm:text-4xl md:text-5xl font-bold pb-2"
+          >
+            Yann Letertre
+          </h1>
+        </div>
+        <div
+          data-animate
+          class="flex items-center justify-center gap-4 translate-y-32 opacity-0 transition-all duration-700"
+        >
+          <p id="home-text" class="text-base sm:text-lg">
+            A web developer who loves building
+          </p>
+          <svg
+            id="svg"
+            data-animate
+            class="w-16 h-16 pb-1 opacity-0 translate-x-32 transition-transform duration-700"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+          >
+            <path
+              style="fill: #25b6d2"
+              d="M0,260.908l174.648-81.136v38.568l-132.08,57.848v0.728l132.08,57.848v38.568L0,292.212V260.908z"
+            />
+            <path
+              style="fill: #415e72"
+              d="M201.6,387.9l77.864-263.8h36.752L238.4,387.9H201.6z"
+            />
+            <path
+              style="fill: #e04f5f"
+              d="M512,293.284L337.352,373.34v-38.568l134.992-57.848v-0.728L337.352,218.34v-38.568L512,259.828V293.284z"
+            />
+          </svg>
+        </div>
+        <!-- Contact Button & GitHub Link -->
+        <div
+          data-animate
+          class="flex flex-row items-center justify-center mt-8 gap-4 opacity-0 translate-y-32 transition-transform duration-700"
+        >
+          <!-- Contact Button -->
+          <button
+            type="button"
+            class="contact-trigger bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded shadow-md transition transform hover:scale-105"
+          >
+            Contact
+          </button>
+          <!-- GitHub Link -->
+          <a
+            href="https://github.com/Qquazld"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center bg-gray-800 hover:bg-gray-700 text-white font-semibold px-6 py-2 rounded shadow-md transition transform hover:scale-105"
+            aria-label="GitHub"
+          >
+            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.091-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.467-2.382 1.235-3.222-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.005-.404 1.022.005 2.048.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.233 1.912 1.233 3.222 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.217.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+
+      <section
+        id="about"
+        class="flex flex-col py-20 justify-center items-center border-b border-gray-400 px-4 sm:px-8 md:px-16"
+      >
+        <div class="flex flex-col items-center justify-center">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-8">About me</h2>
+          <p class="text-base sm:text-lg mt-4 max-w-2xl">
+            I started my career in IT support because I enjoy helping users and
+            solving problems. Later, I completed an intensive coding bootcamp at
+            Le Wagon, where I learned the foundations of full-stack development.
+          </p>
+          <p class="text-base sm:text-lg mt-4 max-w-2xl">
+            Today, I focus on building modern applications and constantly
+            learning new technologies.
+          </p>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+
+      <section
+        id="skills"
+        class="py-20 border-b border-gray-400 px-4 sm:px-8 md:px-16"
+      >
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">
+            Stack & Tools
+          </h2>
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold mb-2 items-start">
+                Languages & Frameworks
+              </h3>
+              <ul
+                class="flex flex-col items-start space-y-2 text-base sm:text-lg"
+              >
+                <li class="flex items-start">
+                  <img
+                    src="../../assets/img/html-5-svgrepo-com.svg"
+                    alt="HTML logo"
+                    class="w-6 h-6 mr-2"
+                  />HTML
+                </li>
+                <li class="flex items-start">
+                  <img
+                    src="../../assets/img/css-3-svgrepo-com.svg"
+                    alt="CSS logo"
+                    class="w-6 h-6 mr-2"
+                  />CSS
+                </li>
+                <li class="flex items-start">
+                  <img
+                    src="../../assets/img/javascript-svgrepo-com.svg"
+                    alt="JavaScript logo"
+                    class="w-6 h-6 mr-2"
+                  />JavaScript
+                </li>
+                <li class="flex items-start">
+                  <img
+                    src="../../assets/img/react-svgrepo-com.svg"
+                    alt="React logo"
+                    class="w-6 h-6 mr-2"
+                  />React
+                </li>
+                <li class="flex items-start">
+                  <img
+                    src="../../assets/img/node-js-svgrepo-com.svg"
+                    alt="Node.js logo"
+                    class="w-6 h-6 mr-2"
+                  />Node.js
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="w-6 h-6 mr-2 flex items-center justify-center text-gray-900 font-bold text-lg"
+                    style="font-family: Arial, Helvetica, sans-serif"
+                    >ex</span
+                  >
+                  Express.js
+                </li>
+                <li class="flex items-start">
+                  <img
+                    src="../../assets/img/ruby-svgrepo-com.svg"
+                    alt="Ruby logo"
+                    class="w-6 h-6 mr-2"
+                  />Ruby
+                </li>
+                <li class="flex items-start">
+                  <img
+                    src="../../assets/img/rails-svgrepo-com.svg"
+                    alt="Rails logo"
+                    class="w-6 h-6 mr-2"
+                  />Rails
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold mb-2">Tools & Platforms</h3>
+              <ul class="space-y-1 text-base sm:text-lg">
+                <li class="flex items-start">
+                  <span class="text-indigo-500 mr-2 mt-1">•</span>Windows Server
+                  & Active Directory
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-500 mr-2 mt-1">•</span>Linux
+                  environment
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-500 mr-2 mt-1">•</span>VMware, Oracle
+                  VirtualBox
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-500 mr-2 mt-1">•</span>ServiceNow,
+                  Remedy
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-500 mr-2 mt-1">•</span>Figma, Notion
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-500 mr-2 mt-1">•</span>Git
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-500 mr-2 mt-1">•</span>Cursor,
+                  Copilot
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-500 mr-2 mt-1">•</span>Docker
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Methodologies</h3>
+              <ul class="space-y-1">
+                <li class="flex items-start">
+                  <span class="text-fuchsia-500 mr-2 mt-1">•</span>Agile (Scrum,
+                  Kanban)
+                </li>
+                <li class="flex items-start">
+                  <span class="text-fuchsia-500 mr-2 mt-1">•</span>ITIL
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+
+      <section
+        id="projects"
+        class="flex flex-col py-20 justify-center items-center px-4 sm:px-8 md:px-16"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-white mb-8">
+          Projects
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-12"
+        >
+          <!-- Project Card 1 -->
+          <div
+            class="bg-gray-800 p-4 rounded-lg shadow-sm shadow-black transition-transform duration-300 hover:scale-105 max-w-md mx-auto"
+          >
+            <h3 class="text-lg md:text-xl text-white mb-2">Blog in Code</h3>
+            <video
+              class="w-full h-64 rounded mb-2 object-contain cursor-pointer"
+              src="assets/videos/Blog-in-Code.mp4"
+              muted
+              playsinline
+              preload="metadata"
+              poster="assets/img/Blog-in-Code.png"
+              aria-label="Blog in Code demo video"
+            ></video>
+            <a
+              href="https://github.com/Qquazld/blog-in-code"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition-colors duration-150 font-semibold"
+              aria-label="GitHub"
+            >
+              <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.091-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.467-2.382 1.235-3.222-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.005-.404 1.022.005 2.048.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.233 1.912 1.233 3.222 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.217.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+              GitHub
+            </a>
+          </div>
+          <!-- Project Card 2 -->
+          <div
+            class="bg-gray-800 p-4 rounded-lg shadow-sm shadow-black transition-transform duration-200 hover:scale-105 max-w-md mx-auto"
+          >
+            <h3 class="text-lg md:text-xl text-white mb-2">Forkify</h3>
+            <video
+              class="w-full h-64 rounded mb-2 object-contain cursor-pointer"
+              src="assets/videos/Forkify.mp4"
+              muted
+              playsinline
+              preload="metadata"
+              poster="assets/img/Forkify.png"
+              aria-label="Forkify demo video"
+            ></video>
+            <a
+              href="https://github.com/Qquazld/Forkify-yann"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition-colors duration-150 font-semibold"
+              aria-label="GitHub"
+            >
+              <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.091-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.467-2.382 1.235-3.222-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.005-.404 1.022.005 2.048.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.233 1.912 1.233 3.222 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.217.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT MODAL -->
+
+      <div
+        id="contactModal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+      >
+        <div
+          class="bg-gray-800 text-white rounded-xl p-8 w-11/12 sm:w-2/3 md:w-1/2 lg:w-1/3 shadow-lg relative"
+        >
+          <button
+            id="closeModal"
+            aria-label="Close modal"
+            class="absolute top-2 right-4 text-gray-400 text-3xl hover:text-red-500 transition-colors"
+          >
+            &times;
+          </button>
+          <form
+            action="https://formspree.io/f/xeoekrgg"
+            method="POST"
+            class="space-y-4"
+          >
+            <label for="email" class="block text-white font-semibold"
+              >Email</label
+            >
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              required
+              aria-required="true"
+              class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            />
+            <label for="message" class="block text-white font-semibold"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Message..."
+              required
+              aria-required="true"
+              class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            ></textarea>
+            <button
+              class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded shadow-md transition transform hover:scale-105"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer
+      class="flex flex-col justify-center items-center gap-y-4 bg-gray-900 border-t border-gray-400 p-6 text-center"
+    >
+      <div class="flex justify-center space-x-4">
+        <a
+          href="https://github.com/Qquazld"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <svg
+            class="h-8 w-8 text-gray-400 hover:text-white transition-colors"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.091-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.467-2.382 1.235-3.222-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.005-.404 1.022.005 2.048.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.233 1.912 1.233 3.222 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.217.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+            />
+          </svg>
+        </a>
+      </div>
+      <p class="text-gray-500 text-sm mb-2">&copy; 2025 Yann Letertre</p>
+    </footer>
+    <script src="src/js/main.js" defer></script>
+  </body>
+</html>
