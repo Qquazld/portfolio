@@ -19,17 +19,18 @@
   </head>
 
   <body class="font-sans text-white">
+    <!-- Header + Nav -->
     <header
       id="header"
       class="sticky top-0 w-full z-10 border-b-1 border-[#ddd]"
     >
-      <!-- NAV -->
+      <!-- Navigation bar -->
       <nav
         id="nav"
         role="navigation"
         class="bg-gray-900 py-4 px-4 sm:px-6 md:px-8 flex items-center justify-between w-full z-10"
       >
-        <!-- Burger menu button-->
+        <!-- Burger menu button for mobile-->
         <button
           id="burgerMenu"
           class="sm:hidden flex items-center px-3 py-2 border rounded text-gray-300 border-gray-400 hover:text-white hover:border-white"
@@ -49,7 +50,7 @@
             />
           </svg>
         </button>
-        <!-- Desktop menu -->
+        <!-- Desktop navigation links -->
         <div
           class="hidden sm:flex flex flex-grow justify-center space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-16 gap-2 text-base md:text-lg text-gray-300 hover:text-white font-semibold"
         >
@@ -83,7 +84,7 @@
             Contact
           </button>
         </div>
-        <!-- Mobile menu -->
+        <!-- Mobile navigation menu -->
         <div
           id="mobileMenu"
           class="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 flex flex-col items-center justify-center gap-8 text-xl text-white sm:hidden transition-all duration-300 opacity-0 pointer-events-none"
@@ -95,8 +96,9 @@
           >
             &times;
           </button>
+          <!-- Mobile navigation links -->
           <a
-            href="#"
+            href="#home"
             class="px-6 py-2 text-gray-300 hover:text-white"
             onclick="closeMobileMenu()"
             >Home</a
@@ -123,10 +125,10 @@
       </nav>
     </header>
 
-    <!-- MAIN -->
+    <!-- Main content -->
 
     <main class="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-600">
-      <!-- HOME SECTION -->
+      <!-- Home section with avatar + intro -->
 
       <section
         id="home"
@@ -137,14 +139,22 @@
           data-animate
           class="flex justify-center transform translate-y-32 opacity-0 transition-all duration-700"
         >
-          <img
-            id="home-image"
-            src="assets/img/avatar.png"
-            loading="lazy"
-            alt="Portrait of Yann Letertre"
-            class="rounded-full w-48 sm:w-60 object-cover border-2 border-white transition-transform transition-shadow transition-colors duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-indigo-600 hover:border-indigo-600"
-          />
+          <div
+            class="bg-gradient-to-tr from-blue-900 to-emerald-300 p-1 sm:p-1 rounded-full"
+            style="display: inline-block"
+          >
+            <div class="bg-gray-900 rounded-full p-1 sm:p-1.5">
+              <img
+                id="home-image"
+                src="assets/img/avatar.png"
+                loading="lazy"
+                alt="Portrait of Yann Letertre"
+                class="rounded-full w-36 sm:w-44 object-cover transition duration-500 hover:scale-105 hover:shadow-[0_0_15px_white]"
+              />
+            </div>
+          </div>
         </div>
+        <!-- Name and headline -->
         <div
           data-animate
           class="flex flex-col items-center justify-center mt-8 translate-y-32 opacity-0 transition-all duration-700"
@@ -166,40 +176,39 @@
           <svg
             id="svg"
             data-animate
-            class="w-16 h-16 pb-1 opacity-0 translate-x-32 transition-transform duration-700"
+            class="w-12 h-12 pb-1 opacity-0 translate-x-32 transition-transform duration-700"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 512 512"
             xml:space="preserve"
           >
             <path
-              style="fill: #25b6d2"
               d="M0,260.908l174.648-81.136v38.568l-132.08,57.848v0.728l132.08,57.848v38.568L0,292.212V260.908z"
+              fill="#fff"
             />
             <path
-              style="fill: #415e72"
               d="M201.6,387.9l77.864-263.8h36.752L238.4,387.9H201.6z"
+              fill="#fff"
             />
             <path
-              style="fill: #e04f5f"
               d="M512,293.284L337.352,373.34v-38.568l134.992-57.848v-0.728L337.352,218.34v-38.568L512,259.828V293.284z"
+              fill="#fff"
             />
           </svg>
         </div>
-        <!-- Contact Button & GitHub Link -->
+        <!-- Contact button & GitHub link -->
         <div
           data-animate
           class="flex flex-row items-center justify-center mt-8 gap-4 opacity-0 translate-y-32 transition-transform duration-700"
         >
-          <!-- Contact Button -->
+          <!-- Contact button -->
           <button
             type="button"
             class="contact-trigger bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded shadow-md transition transform hover:scale-105"
           >
             Contact
           </button>
-          <!-- GitHub Link -->
+          <!-- GitHub link -->
           <a
             href="https://github.com/Qquazld"
             target="_blank"
@@ -217,7 +226,7 @@
         </div>
       </section>
 
-      <!-- ABOUT SECTION -->
+      <!-- About section -->
 
       <section
         id="about"
@@ -237,7 +246,7 @@
         </div>
       </section>
 
-      <!-- SKILLS SECTION -->
+      <!-- Skills section -->
 
       <section
         id="skills"
@@ -337,14 +346,10 @@
                   <span class="text-indigo-500 mr-2 mt-1">•</span>Figma, Notion
                 </li>
                 <li class="flex items-start">
-                  <span class="text-indigo-500 mr-2 mt-1">•</span>Git
-                </li>
-                <li class="flex items-start">
-                  <span class="text-indigo-500 mr-2 mt-1">•</span>Cursor,
-                  Copilot
-                </li>
-                <li class="flex items-start">
                   <span class="text-indigo-500 mr-2 mt-1">•</span>Docker
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-500 mr-2 mt-1">•</span>Git
                 </li>
               </ul>
             </div>
@@ -356,6 +361,9 @@
                   Kanban)
                 </li>
                 <li class="flex items-start">
+                  <span class="text-fuchsia-500 mr-2 mt-1">•</span>SOLID
+                </li>
+                <li class="flex items-start">
                   <span class="text-fuchsia-500 mr-2 mt-1">•</span>ITIL
                 </li>
               </ul>
@@ -364,7 +372,7 @@
         </div>
       </section>
 
-      <!-- PROJECTS SECTION -->
+      <!-- Projects section -->
 
       <section
         id="projects"
@@ -437,7 +445,7 @@
         </div>
       </section>
 
-      <!-- CONTACT MODAL -->
+      <!-- Contact modal -->
 
       <div
         id="contactModal"
@@ -491,7 +499,7 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
+    <!-- Footer with Github link + dynamic year -->
 
     <footer
       class="flex flex-col justify-center items-center gap-y-4 bg-gray-900 border-t border-gray-400 p-6 text-center"
@@ -514,7 +522,9 @@
           </svg>
         </a>
       </div>
-      <p class="text-gray-500 text-sm mb-2">&copy; 2025 Yann Letertre</p>
+      <p class="text-gray-500 text-sm mb-2">
+        &copy; <span id="footer-year"></span> Yann Letertre
+      </p>
     </footer>
     <script src="src/js/main.js" defer></script>
   </body>

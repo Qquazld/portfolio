@@ -1,5 +1,6 @@
 "use strict";
 
+// DOM ELEMENTS
 const header = document.getElementById("header");
 const nav = document.getElementById("nav");
 const home = document.getElementById("home");
@@ -16,24 +17,25 @@ const burgerMenu = document.getElementById("burgerMenu");
 const mobileMenu = document.getElementById("mobileMenu");
 const closeMobileMenuBtn = document.getElementById("closeMobileMenu");
 
-// Sticky navigation (Intersection Observer API)
+// Sticky Navigation using Intersection Observer
 const navHeight = nav.getBoundingClientRect().height;
+
+// Callback to toggle sticky class on header based on intersection
 const stickyNav = function (entries) {
   const [entry] = entries;
-
   if (!entry.isIntersecting) header.classList.add("sticky", "opacity-90");
   else header.classList.remove("sticky", "opacity-90");
 };
 
+// Observer for sticky navigation
 const navObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,
   rootMargin: `-${navHeight}px`,
 });
-
 navObserver.observe(home);
 
-// Reveal "Home" section (Window Load Event)
+// Reveal "Home" Section on Page Loading
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.querySelectorAll("[data-animate]").forEach((el) => {
@@ -48,11 +50,12 @@ window.addEventListener("DOMContentLoaded", () => {
   }, 500);
 });
 
-//Reveal other sections
+//  Reveal Other Sections on Scroll
 
 // Select all sections except #home
 const allSections = document.querySelectorAll("section:not(#home)");
 
+// Callback to reveal sections when they enter the viewport
 const revealSection = function (entries, observer) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -62,6 +65,7 @@ const revealSection = function (entries, observer) {
 
     observer.unobserve(entry.target);
 
+    // Animate skills list items with staggered effect
     if (entry.target.id === "skills") {
       const skillsItems = entry.target.querySelectorAll("li");
       skillsItems.forEach((item, index) => {
@@ -74,11 +78,13 @@ const revealSection = function (entries, observer) {
   });
 };
 
+// Observer for section reveal
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
   threshold: 0.2,
 });
 
+// Initialize section animations
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
 
@@ -91,6 +97,7 @@ allSections.forEach(function (section) {
     "transform"
   );
 
+  // Prepare skills items for animation
   if (section.id === "skills") {
     const skillItems = section.querySelectorAll("li");
     skillItems.forEach((item) => {
@@ -104,7 +111,7 @@ allSections.forEach(function (section) {
   }
 });
 
-// Modal window
+// Modal Window (Contact Form)
 
 // Reset the contact form fields
 function resetContactForm() {
@@ -112,6 +119,7 @@ function resetContactForm() {
   if (form) form.reset();
 }
 
+// Open modal and focus first input
 contactBtn.forEach((btn) =>
   btn.addEventListener("click", () => {
     contactModal.classList.remove("hidden");
@@ -121,11 +129,13 @@ contactBtn.forEach((btn) =>
   })
 );
 
+// Close modal on close button click
 closeModalButton.addEventListener("click", () => {
   contactModal.classList.add("hidden");
   resetContactForm();
 });
 
+// Close modal when clicking outside the modal content
 contactModal.addEventListener("click", (e) => {
   if (e.target === contactModal) {
     contactModal.classList.add("hidden");
@@ -133,7 +143,7 @@ contactModal.addEventListener("click", (e) => {
   }
 });
 
-// === Escape key to close modal ===
+// Close modal with Escape key
 document.addEventListener("keydown", (e) => {
   if (
     !contactModal.classList.contains("hidden") &&
@@ -144,9 +154,9 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Projects section
+// Projects Section: Video Interactions
 
-// Target all videos in the projects section
+// Play/pause videos on hover, fullscreen on click
 document.querySelectorAll("#projects video").forEach((video) => {
   video.addEventListener("mouseenter", () => {
     video.play();
@@ -162,21 +172,31 @@ document.querySelectorAll("#projects video").forEach((video) => {
   });
 });
 
-// Burger mobile menu
+// Mobile Burger Menu
 
+// Open mobile menu
 function openMobileMenu() {
   mobileMenu.classList.remove("opacity-0", "pointer-events-none");
   mobileMenu.classList.add("opacity-100");
 }
+
+// Close mobile menu
 function closeMobileMenu() {
   mobileMenu.classList.add("opacity-0", "pointer-events-none");
   mobileMenu.classList.remove("opacity-100");
 }
 
+// Event listeners for opening/closing mobile menu
 burgerMenu.addEventListener("click", openMobileMenu);
 closeMobileMenuBtn.addEventListener("click", closeMobileMenu);
 
-// Close mobile menu
+// Close mobile menu when clicking any link or button inside it
 mobileMenu
   .querySelectorAll("a,button")
   .forEach((el) => el.addEventListener("click", closeMobileMenu));
+
+// Automatically update the copyright year
+document.addEventListener("DOMContentLoaded", () => {
+  const yearSpan = document.getElementById("footer-year");
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+});
