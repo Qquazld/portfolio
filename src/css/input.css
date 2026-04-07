@@ -1,3 +1,163 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer components {
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  .hero-animate {
+    animation: reveal 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .modal-animate {
+    animation: fade-in 0.3s ease-out;
+  }
+  .nav-link {
+    @apply relative flex items-center text-xl text-blue-100 transition-colors duration-200 hover:text-cyan-400;
+    overflow: hidden;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -12px;
+    width: 12px;
+    height: 2px;
+    background: #22d3ee;
+    transition: left 0.4s ease;
+  }
+
+  .nav-link:hover::after {
+    left: 110%;
+  }
+
+  .btn-contact {
+    @apply relative flex items-center overflow-hidden rounded-sm border-2 border-cyan-400 bg-transparent px-6 py-2 text-base font-semibold text-cyan-400 shadow-md transition-colors duration-300 hover:border-slate-950 hover:bg-slate-950 md:text-xl;
+  }
+
+  .btn-contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 20%;
+    height: 100%;
+    background: theme("colors.cyan.400");
+    z-index: 0;
+  }
+
+  .btn-contact:hover::before {
+    animation: swipe 0.4s ease forwards;
+  }
+
+  .btn-contact span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .avatar-ring {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  .section-title {
+    @apply relative inline-block text-2xl font-bold text-blue-100 sm:text-3xl;
+  }
+
+  .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: theme("colors.cyan.400");
+    transition: width 0.6s ease;
+  }
+
+  .section-title.is-visible::after {
+    width: 100%;
+  }
+
+  .skill-item {
+    @apply mr-1 flex h-10 w-10 -translate-x-8 items-center opacity-0 transition-all duration-500;
+  }
+
+  .skill-badge {
+    @apply -translate-x-8 rounded-sm border border-cyan-400 bg-sky-950 px-3 py-1 text-base opacity-0 transition-all duration-500 sm:text-lg;
+  }
+
+  .project-card {
+    @apply mx-auto max-w-md rounded-sm bg-gray-800 p-4 transition-transform duration-300 hover:scale-105;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes swipe {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes bounce-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes underline-loop {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

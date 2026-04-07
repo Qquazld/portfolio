@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Poppins", "Arial", "sans-serif"],
+        sans: ["Advent Pro", "ui-sans-serif", "system-ui", "sans-serif"],
       },
     },
   },
