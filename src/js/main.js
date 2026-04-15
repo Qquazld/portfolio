@@ -1,19 +1,40 @@
-"use strict";
+import "../css/input.css";
 
 // DOM ELEMENTS
 const header = document.getElementById("header");
 const homeSection = document.getElementById("home");
 const typewriterEl = document.getElementById("typewriter");
 const sectionTitles = document.querySelectorAll(".section-title");
-const aboutSection = document.getElementById("about");
-const skillsSection = document.getElementById("skills");
-const contactBtn = document.querySelectorAll(".contact-trigger");
-const contactModal = document.getElementById("contactModal");
-const closeModalButton = document.getElementById("closeModal");
 const burgerMenu = document.getElementById("burgerMenu");
 const mobileOverlay = document.getElementById("mobileOverlay");
 const mobileMenu = document.getElementById("mobileMenu");
 const closeMobileMenuBtn = document.getElementById("closeMobileMenu");
+
+// Navbar — transparent sur hero, fond flouté au scroll
+const navHeight = header.getBoundingClientRect().height;
+
+const heroObserver = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting) {
+      header.classList.remove(
+        "bg-sky-950/80",
+        "backdrop-blur-md",
+        "border-gray-700/50",
+      );
+      header.classList.add("border-transparent", "bg-transparent");
+    } else {
+      header.classList.add(
+        "bg-sky-950/80",
+        "backdrop-blur-md",
+        "border-gray-700/50",
+      );
+      header.classList.remove("border-transparent", "bg-transparent");
+    }
+  },
+  { rootMargin: `-${navHeight}px` },
+);
+
+heroObserver.observe(homeSection);
 
 // // Adjust scroll-margin-top based on nav height
 // const updateScrollMargin = () => {
@@ -27,50 +48,50 @@ const closeMobileMenuBtn = document.getElementById("closeMobileMenu");
 // window.addEventListener("resize", updateScrollMargin);
 
 // Navbar — visible sur hero, disparaît au scroll, réapparaît sur about
-let lastScrollY = window.scrollY;
-let aboveAbout = true;
+// let lastScrollY = window.scrollY;
+// let aboveAbout = true;
 
-const aboutObserver = new IntersectionObserver(
-  ([entry]) => {
-    if (entry.isIntersecting) {
-      // About visible → nav réapparaît avec fond
-      aboveAbout = false;
-      header.classList.remove("-translate-y-full");
-      header.classList.add(
-        "fixed",
-        "bg-sky-950/80",
-        "backdrop-blur-md",
-        "border-gray-700/50",
-      );
-      header.classList.remove("bg-transparent", "border-transparent");
-    } else if (window.scrollY < document.getElementById("about").offsetTop) {
-      // On est remonté au-dessus de l'about → nav transparente visible
-      aboveAbout = true;
-      header.classList.remove(
-        "fixed",
-        "-translate-y-full",
-        "bg-sky-950/80",
-        "backdrop-blur-md",
-        "border-gray-700/50",
-      );
-      header.classList.add("bg-transparent", "border-transparent");
-    }
-  },
-  { threshold: 0.2 },
-);
+// const aboutObserver = new IntersectionObserver(
+//   ([entry]) => {
+//     if (entry.isIntersecting) {
+//       // About visible → nav réapparaît avec fond
+//       aboveAbout = false;
+//       header.classList.remove("-translate-y-full");
+//       header.classList.add(
+//         "fixed",
+//         "bg-sky-950/80",
+//         "backdrop-blur-md",
+//         "border-gray-700/50",
+//       );
+//       header.classList.remove("bg-transparent", "border-transparent");
+//     } else if (window.scrollY < document.getElementById("about").offsetTop) {
+//       // On est remonté au-dessus de l'about → nav transparente visible
+//       aboveAbout = true;
+//       header.classList.remove(
+//         "fixed",
+//         "-translate-y-full",
+//         "bg-sky-950/80",
+//         "backdrop-blur-md",
+//         "border-gray-700/50",
+//       );
+//       header.classList.add("bg-transparent", "border-transparent");
+//     }
+//   },
+//   { threshold: 0.2 },
+// );
 
-aboutObserver.observe(document.getElementById("about"));
+// aboutObserver.observe(document.getElementById("about"));
 
-window.addEventListener("scroll", () => {
-  const currentScrollY = window.scrollY;
+// window.addEventListener("scroll", () => {
+//   const currentScrollY = window.scrollY;
 
-  // Cache la nav uniquement quand on scrolle vers le bas sur le hero
-  if (aboveAbout && currentScrollY > lastScrollY && currentScrollY > 80) {
-    header.classList.add("-translate-y-full");
-  }
+//   // Cache la nav uniquement quand on scrolle vers le bas sur le hero
+//   if (aboveAbout && currentScrollY > lastScrollY && currentScrollY > 80) {
+//     header.classList.add("-translate-y-full");
+//   }
 
-  lastScrollY = currentScrollY;
-});
+//   lastScrollY = currentScrollY;
+// });
 
 // Reveal sections on scroll
 
@@ -99,7 +120,7 @@ const revealSection = (entries, observer) => {
 
     // Animate skills list items with staggered effect
     if (entry.target.id === "skills") {
-      const items = entry.target.querySelectorAll(".skill-item, .skill-badge");
+      const items = entry.target.querySelectorAll(".skill-item");
       items.forEach((item, index) => {
         setTimeout(() => {
           item.classList.remove("opacity-0", "-translate-x-8");
@@ -112,7 +133,7 @@ const revealSection = (entries, observer) => {
 
 // Observer
 const sectionObserver = new IntersectionObserver(revealSection, {
-  threshold: 0.15,
+  threshold: 0.2,
 });
 
 // Observe
@@ -135,59 +156,59 @@ sectionTitles.forEach((title) => titleObserver.observe(title));
 
 // Modal Window (Contact Form)
 
-const focusableSelectors = "input, textarea, button, a[href]";
+// const focusableSelectors = "input, textarea, button, a[href]";
 
-function getFocusableElements() {
-  return [...contactModal.querySelectorAll(focusableSelectors)];
-}
+// function getFocusableElements() {
+//   return [...contactModal.querySelectorAll(focusableSelectors)];
+// }
 
-function resetContactForm() {
-  const form = contactModal.querySelector("form");
-  if (form) form.reset();
-}
+// function resetContactForm() {
+//   const form = contactModal.querySelector("form");
+//   if (form) form.reset();
+// }
 
-function openModal() {
-  contactModal.classList.remove("hidden");
-  document.addEventListener("keydown", handleModalKeydown);
-  setTimeout(() => {
-    getFocusableElements()[0]?.focus();
-  }, 100);
-}
+// function openModal() {
+//   contactModal.classList.remove("hidden");
+//   document.addEventListener("keydown", handleModalKeydown);
+//   setTimeout(() => {
+//     getFocusableElements()[0]?.focus();
+//   }, 100);
+// }
 
-function closeModal() {
-  contactModal.classList.add("hidden");
-  document.removeEventListener("keydown", handleModalKeydown);
-  resetContactForm();
-}
+// function closeModal() {
+//   contactModal.classList.add("hidden");
+//   document.removeEventListener("keydown", handleModalKeydown);
+//   resetContactForm();
+// }
 
-function handleModalKeydown(e) {
-  const focusable = getFocusableElements();
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
+// function handleModalKeydown(e) {
+//   const focusable = getFocusableElements();
+//   const first = focusable[0];
+//   const last = focusable[focusable.length - 1];
 
-  if (e.key === "Escape" || e.key === "Esc") {
-    closeModal();
-    return;
-  }
+//   if (e.key === "Escape" || e.key === "Esc") {
+//     closeModal();
+//     return;
+//   }
 
-  if (e.key === "Tab") {
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
-  }
-}
+//   if (e.key === "Tab") {
+//     if (e.shiftKey && document.activeElement === first) {
+//       e.preventDefault();
+//       last.focus();
+//     } else if (!e.shiftKey && document.activeElement === last) {
+//       e.preventDefault();
+//       first.focus();
+//     }
+//   }
+// }
 
-contactBtn.forEach((btn) => btn.addEventListener("click", openModal));
+// contactBtn.forEach((btn) => btn.addEventListener("click", openModal));
 
-closeModalButton.addEventListener("click", closeModal);
+// closeModalButton.addEventListener("click", closeModal);
 
-contactModal.addEventListener("click", (e) => {
-  if (e.target === contactModal) closeModal();
-});
+// contactModal.addEventListener("click", (e) => {
+//   if (e.target === contactModal) closeModal();
+// });
 
 // Projects Section: Video Interactions
 
@@ -272,3 +293,13 @@ mobileMenu
 
 const yearSpan = document.getElementById("footer-year");
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+// form submission feedback
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.formspree) {
+    window.formspree("initForm", {
+      formElement: "#contact-form",
+      formId: "xeoekrgg",
+    });
+  }
+});

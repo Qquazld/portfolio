@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
     <link href="dist/output.css" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="assets/img/code-icon.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="assets/img/code-icon.svg" /> -->
     <link rel="preload" href="assets/img/avatar.png" as="image" />
     <title>Yann Letertre - Web Developer</title>
   </head>
@@ -36,7 +36,7 @@
     <!-- Header + Nav -->
     <header
       id="header"
-      class="top-0 z-50 w-full border-b border-transparent bg-transparent transition-all duration-700 ease-out"
+      class="fixed top-0 z-50 w-full border-b border-transparent bg-transparent transition-all duration-500 ease-out"
     >
       <!-- Navigation bar -->
       <nav id="nav" class="z-10 w-full">
@@ -50,7 +50,7 @@
               class="font-logo relative flex h-12 w-12 items-center justify-center rounded-sm bg-gradient-to-tr from-blue-900 to-cyan-400 p-0.5 text-lg font-bold transition hover:scale-105 sm:text-xl"
             >
               <span
-                class="flex h-full w-full items-center justify-center rounded-sm bg-slate-900 transition-colors hover:text-cyan-400"
+                class="flex h-full w-full items-center justify-center rounded-sm bg-slate-900 text-blue-100 transition-colors hover:text-cyan-400"
                 >YL</span
               >
             </a>
@@ -62,9 +62,7 @@
             <a href="#about" class="nav-link"> About</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#projects" class="nav-link">Projects</a>
-            <button type="button" class="btn-contact contact-trigger">
-              Contact
-            </button>
+            <a href="#contact" class="btn-contact"> Contact </a>
           </div>
           <!-- Mobile navigation menu -->
           <button
@@ -102,9 +100,7 @@
             <a href="#about" class="nav-link">About</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#projects" class="nav-link">Projects</a>
-            <button type="button" class="contact-trigger nav-link">
-              Contact
-            </button>
+            <a href="#contact" class="btn-contact"> Contact </a>
           </div>
         </div>
       </nav>
@@ -118,23 +114,23 @@
         id="home"
         class="hero-animate flex min-h-screen items-center justify-center bg-slate-900 transition-all duration-300 ease-out"
       >
-        <div class="w-full max-w-5xl px-8 py-16 sm:px-16 sm:py-20 md:px-12">
+        <div class="w-full max-w-5xl px-8 py-16 sm:px-16 sm:py-40">
           <!-- Name -->
           <div>
             <p
-              class="text-xl font-semibold leading-tight text-cyan-400 sm:text-3xl"
+              class="text-2xl font-semibold leading-tight text-cyan-400 sm:text-3xl md:text-4xl"
             >
               Hello, my name is
             </p>
             <h1
               id="home-title"
-              class="mt-4 text-3xl font-bold tracking-wide text-blue-100 sm:text-5xl md:text-7xl"
+              class="mt-3 text-4xl font-bold tracking-wide text-blue-100 sm:mt-4 sm:text-5xl md:text-6xl lg:text-7xl"
             >
               Yann Letertre
             </h1>
           </div>
           <!-- Typewriter -->
-          <div class="mt-6">
+          <div class="mt-5 sm:mt-6">
             <p
               class="text-2xl font-semibold text-cyan-400 sm:text-3xl md:text-4xl"
             >
@@ -145,28 +141,30 @@
             </p>
           </div>
           <!-- Description -->
-          <div class="mt-8 max-w-xl">
-            <p class="text-xl leading-relaxed text-slate-400 sm:text-3xl">
+          <div class="mt-6 max-w-xl sm:mt-8">
+            <p
+              class="text-xl leading-relaxed text-slate-400 sm:text-2xl md:text-3xl"
+            >
               "I love creating web applications that bring ideas to life."
             </p>
           </div>
           <!-- Call to action -->
-          <div class="mt-8">
-            <button
-              type="button"
-              class="rounded-sm bg-cyan-400 px-6 py-3 font-semibold text-black shadow-md shadow-black/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/80 sm:text-2xl"
+          <div class="mt-6 sm:mt-8">
+            <a
+              href="#contact"
+              class="inline-block rounded-sm bg-cyan-400 px-3 py-2 text-xl font-semibold text-black shadow-md shadow-black/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/80 md:px-6 md:py-3 md:text-2xl"
             >
               Get in touch
               <span class="relative top-[1px] text-2xl font-bold leading-none"
                 >→</span
               >
-            </button>
+            </a>
           </div>
           <!-- Scroll down -->
-          <div class="mt-12">
+          <div class="mt-8 sm:mt-12">
             <a
               href="#about"
-              class="inline-flex gap-2 text-sm text-cyan-400 transition-transform duration-300 hover:-translate-y-1.5 sm:text-xl"
+              class="inline-flex gap-2 text-base text-cyan-400 transition-transform duration-300 hover:-translate-y-1.5 sm:text-xl"
             >
               <span>Scroll Down</span>
               <div
@@ -208,7 +206,7 @@
 
       <section
         id="about"
-        class="bg-slate-900 px-4 py-16 sm:px-8 sm:py-20 md:px-16 lg:py-24"
+        class="bg-slate-900 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-24"
       >
         <div class="mx-auto max-w-5xl">
           <h2 class="section-title">About me</h2>
@@ -216,7 +214,7 @@
           <div class="mt-8 grid grid-cols-1 items-center gap-14 md:grid-cols-2">
             <div>
               <p
-                class="text-base font-medium leading-relaxed tracking-wide text-slate-400 sm:text-lg"
+                class="text-base font-medium leading-relaxed tracking-wide text-slate-400 md:text-lg"
               >
                 <span class="text-slate-300">Full-stack web developer</span>
                 with an
@@ -224,7 +222,7 @@
                 currently open to new opportunities in web development or IT.
               </p>
               <p
-                class="mt-4 text-base font-medium leading-relaxed tracking-wide text-slate-400 sm:text-lg"
+                class="mt-4 text-base font-medium leading-relaxed tracking-wide text-slate-400 md:text-lg"
               >
                 I started my career in IT support, solving problems and helping
                 users. Driven by curiosity, I completed an intensive
@@ -239,7 +237,7 @@
                 (MongoDB, Express, React, Node.js).
               </p>
               <p
-                class="mt-4 text-base font-medium leading-relaxed tracking-wide text-slate-400 sm:text-lg"
+                class="mt-4 text-base font-medium leading-relaxed tracking-wide text-slate-400 md:text-lg"
               >
                 I love creating web applications that bring ideas to life. I am
                 continuously improving my skills and eager to contribute to
@@ -249,7 +247,7 @@
             <!-- Avatar -->
             <div class="mx-auto">
               <div
-                class="rounded-full bg-gradient-to-tr from-blue-900 to-cyan-400 p-1 transition-shadow duration-500 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+                class="cursor-pointer rounded-full bg-gradient-to-tr from-blue-900 to-cyan-400 p-1 opacity-90 transition-all duration-500 ease-in-out hover:opacity-100 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
               >
                 <div class="rounded-full bg-slate-900 p-1.5">
                   <img
@@ -258,7 +256,7 @@
                     height="288"
                     src="assets/img/avatar.png"
                     alt="Portrait of Yann Letertre, full-stack web developer"
-                    class="w-44 rounded-full object-cover sm:w-64 lg:w-72"
+                    class="w-48 rounded-full object-cover md:w-64 lg:w-72"
                   />
                 </div>
               </div>
@@ -270,183 +268,153 @@
       <!-- Skills section -->
       <section
         id="skills"
-        class="bg-slate-900 px-4 py-16 sm:px-8 sm:py-20 md:px-16 lg:py-24"
+        class="bg-slate-900 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-24"
       >
         <div class="mx-auto max-w-5xl">
           <h2 class="section-title">Skills</h2>
           <div class="mt-8 grid grid-cols-1 gap-14 md:grid-cols-2">
             <!-- Frontend -->
             <div data-skills-group class="flex flex-col items-start">
-              <h3 class="mb-4 text-lg font-semibold text-blue-100">Frontend</h3>
+              <h3 class="mb-4 text-xl font-semibold text-slate-300 md:text-2xl">
+                Frontend Development
+              </h3>
+              <ul class="flex flex-wrap gap-4">
+                <li class="skill-item">
+                  <img
+                    src="assets/img/html-5-svgrepo-com.svg"
+                    alt="HTML logo"
+                  />
+                  <span>HTML</span>
+                </li>
+                <li class="skill-item">
+                  <img src="assets/img/css-3-svgrepo-com.svg" alt="CSS logo" />
+                  <span>CSS</span>
+                </li>
+                <li class="skill-item">
+                  <img
+                    src="assets/img/javascript-svgrepo-com.svg"
+                    alt="JavaScript logo"
+                  />
+                  <span>JavaScript</span>
+                </li>
+                <li class="skill-item">
+                  <img
+                    src="assets/img/react-svgrepo-com.svg"
+                    alt="React logo"
+                  />
+                  <span>React</span>
+                </li>
+              </ul>
+              <!-- Dev tools -->
+
+              <div data-skills-group class="mt-14 md:mt-24">
+                <h3
+                  class="mb-4 text-xl font-semibold text-slate-300 md:text-2xl"
+                >
+                  Dev Tools
+                </h3>
                 <ul class="flex flex-wrap gap-4 text-base sm:text-lg">
-                  <li class="flex items-center">
-                    <img
-                      src="assets/img/html-5-svgrepo-com.svg"
-                      alt="HTML logo"
-                      class="skill-item"
-                    />
-                    <span>HTML</span>
+                  <li class="skill-item">
+                    <img src="assets/img/git-svgrepo-com.svg" alt="Git logo" />
+                    <span>Git</span>
                   </li>
-                  <li class="flex items-center">
+                  <li class="skill-item">
                     <img
-                      src="assets/img/css-3-svgrepo-com.svg"
-                      alt="CSS logo"
-                      class="skill-item"
+                      src="assets/img/github-242-svgrepo-com.svg"
+                      alt="Github logo"
                     />
-                    <span>CSS</span>
+                    <span>Github</span>
                   </li>
-                  <li class="flex items-center">
+                  <!-- <li class="skill-item">
+                <img
+                  src="assets/img/brand-github-copilot.svg"
+                  alt="Github Copilot logo"
+                  class="skill-item"
+                />
+                <span>Github Copilot</span>
+              </li> -->
+                  <li class="skill-item">
                     <img
-                      src="assets/img/javascript-svgrepo-com.svg"
-                      alt="JavaScript logo"
-                      class="skill-item"
+                      src="assets/img/postman-icon-svgrepo-com.svg"
+                      alt="Postman logo"
                     />
-                    <span>JavaScript</span>
+                    <span>Postman</span>
                   </li>
-                  <li class="flex items-center">
+                  <li class="skill-item">
                     <img
-                      src="assets/img/react-svgrepo-com.svg"
-                      alt="React logo"
-                      class="skill-item"
+                      src="assets/img/figma-svgrepo-com.svg"
+                      alt="Figma logo"
                     />
-                    <span>React</span>
+                    <span>Figma</span>
                   </li>
                 </ul>
+              </div>
             </div>
 
             <!-- Backend -->
             <div data-skills-group class="flex flex-col items-start">
-              <h3 class="mb-4 text-lg font-semibold text-blue-100">Backend</h3>
-                <ul class="flex flex-wrap gap-4 text-base sm:text-lg">
-                  <li class="flex items-center">
+              <h3 class="mb-4 text-xl font-semibold text-slate-300 md:text-2xl">
+                Backend
+              </h3>
+              <ul class="flex flex-wrap gap-4">
+                <li class="skill-item">
+                  <img
+                    src="assets/img/node-js-svgrepo-com.svg"
+                    alt="Node.js logo"
+                  />
+                  <span>Node.js</span>
+                </li>
+                <li class="skill-item">
+                  <img
+                    src="assets/img/express-svgrepo-com.svg"
+                    alt="Express.js logo"
+                  />
+                  <span>Express.js</span>
+                </li>
+                <li class="skill-item">
+                  <img
+                    src="assets/img/mongodb-svgrepo-com.svg"
+                    alt="MongoDB logo"
+                  />
+                  <span>MongoDB</span>
+                </li>
+                <!-- <li class="skill-item">
+                  <img src="assets/img/ruby-svgrepo-com.svg" alt="Ruby logo" />
+                  <span>Ruby</span>
+                </li> -->
+                <!-- <li class="skill-item">
+                  <img
+                    src="assets/img/rails-svgrepo-com.svg"
+                    alt="Rails logo"
+                  />
+                  <span>Rails</span>
+                </li> -->
+              </ul>
+              <div data-skills-group class="mt-14 md:mt-24">
+                <h3
+                  class="mb-4 text-xl font-semibold text-slate-300 md:text-2xl"
+                >
+                  Currently Learning
+                </h3>
+                <ul class="flex flex-wrap gap-4">
+                  <li class="skill-item">
                     <img
-                      src="assets/img/node-js-svgrepo-com.svg"
-                      alt="Node.js logo"
-                      class="skill-item"
+                      src="assets/img/typescript-svgrepo-com.svg"
+                      alt="TypeScript logo"
                     />
-                    <span>Node.js</span>
+                    <span>TypeScript</span>
                   </li>
-                  <li class="flex items-center">
+                  <li class="skill-item">
                     <img
-                      src="assets/img/express-svgrepo-com.svg"
-                      alt="Express.js logo"
-                      class="skill-item"
+                      src="assets/img/jest-snapshot-svgrepo-com.svg"
+                      alt="Jest logo"
                     />
-                    <span>Express.js</span>
-                  </li>
-                  <li class="flex items-center">
-                    <img
-                      src="assets/img/mongodb-svgrepo-com.svg"
-                      alt="MongoDB logo"
-                      class="skill-item"
-                    />
-                    <span>MongoDB</span>
-                  </li>
-                  <li class="flex items-center">
-                    <img
-                      src="assets/img/ruby-svgrepo-com.svg"
-                      alt="Ruby logo"
-                      class="skill-item"
-                    />
-                    <span>Ruby</span>
-                  </li>
-                  <li class="flex items-center">
-                    <img
-                      src="assets/img/rails-svgrepo-com.svg"
-                      alt="Rails logo"
-                      class="skill-item"
-                    />
-                    <span>Rails</span>
+                    <span>Jest</span>
                   </li>
                 </ul>
+              </div>
             </div>
           </div>
-
-          <!-- Dev tools -->
-
-          <div data-skills-group class="mt-8">
-            <h3 class=" text-lg font-semibold text-blue-100">Dev Tools</h3>
-            <div class="mt-4 flex flex-wrap gap-4">
-              <ul class="flex flex-wrap gap-4 text-base sm:text-lg">
-                  <li class="flex items-center">
-                    <img
-                      src="assets/img/git-svgrepo-com.svg"
-                      alt="Git logo"
-                      class="skill-item"
-                    />
-                    <span>Git</span>
-                  </li>
-                  <li class="flex items-center">
-                    <img
-                      src="assets/img/github-142-svgrepo-com.svg"
-                      alt="Github logo"
-                      class="skill-item"
-                    />
-                    <span>Github</span>
-                  </li>
-                    <li class="flex items-center">
-                    <img
-                      src="assets/img/brand-github-copilot.svg"
-                      alt="Github Copilot logo"
-                      class="skill-item "
-                    />
-                    <span>Github Copilot</span>
-                  </li>
-                  <li class="flex items-center">
-                    <img
-                      src="assets/img/figma-svgrepo-com.svg"
-                      alt="Figma logo"
-                      class="skill-item"
-                    />
-                    <span>Figma</span>
-                  </li>
-                    <li class="flex items-center">
-                    <img
-                      src="assets/img/postman-icon-svgrepo-com.svg"
-                      alt="Postman logo"
-                      class="skill-item "
-                    />
-                    <span>Postman</span>
-                  </li>
-              
-                </ul>
-            </div>
-          </div>
-
-          <!-- IT Support -->
-          <!-- <div data-skills-group>
-            <h3 class="mb-4 text-lg font-semibold text-gray-300">IT Support</h3>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="rounded-sm border border-gray-700 bg-gray-800 px-3 py-1 text-base sm:text-lg"
-                >Windows Server & AD</span
-              >
-              <span
-                class="rounded-sm border border-gray-700 bg-gray-800 px-3 py-1 text-base sm:text-lg"
-                >Linux</span
-              >
-              <span
-                class="rounded-sm border border-gray-700 bg-gray-800 px-3 py-1 text-base sm:text-lg"
-                >VMware</span
-              >
-              <span
-                class="rounded-sm border border-gray-700 bg-gray-800 px-3 py-1 text-base sm:text-lg"
-                >ServiceNow</span
-              >
-              <span
-                class="rounded-sm border border-gray-700 bg-gray-800 px-3 py-1 text-base sm:text-lg"
-                >Remedy</span
-              >
-              <span
-                class="rounded-sm border border-gray-700 bg-gray-800 px-3 py-1 text-base sm:text-lg"
-                >Agile</span
-              >
-              <span
-                class="rounded-sm border border-gray-700 bg-gray-800 px-3 py-1 text-base sm:text-lg"
-                >ITIL</span
-              >
-            </div>
-          </div> -->
         </div>
       </section>
 
@@ -454,89 +422,108 @@
 
       <section
         id="projects"
-        class="bg-slate-900 px-4 py-16 sm:px-8 sm:py-20 md:px-16 lg:py-24"
+        class="bg-slate-900 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-24"
       >
         <div class="mx-auto max-w-5xl">
           <h2 class="section-title">Projects</h2>
           <div class="mt-8 grid grid-cols-1 gap-14 md:grid-cols-2">
-
             <!-- Project Card 1 -->
+            <div class="project-card">
+              <div class="flex justify-between">
+                <h3 class="mb-2 text-xl text-blue-100 md:text-2xl">Artfolio</h3>
 
-                 <div class="project-card bg-sky-950">
-              <h3 class="mb-2 text-lg text-white md:text-xl">Artfolio</h3>
+                <a
+                  href="https://github.com/Qquazld/artfolio"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                >
+                  <svg class="h-8 w-8" fill="currentColor" aria-hidden="true">
+                    <use href="#icon-github" />
+                  </svg>
+                </a>
+              </div>
               <video
-                class="mb-2 h-64 w-full cursor-pointer rounded-sm object-contain"
+                class="h-64 w-full cursor-pointer rounded-sm object-contain"
                 src="assets/videos/Artfolio.mp4"
                 muted
                 playsinline
                 preload="metadata"
                 poster="assets/img/Artfolio.png"
-                aria-label="Blog in Code demo video"
+                aria-label="Artfolio demo video"
               ></video>
-              <p class="mb-4 text-sm text-gray-300">
-                A simple blog built with Express.js and EJS, using only
-                server-side rendering. Full CRUD logic and a responsive UI.
+              <p class="mb-4 text-base font-medium text-slate-400">
+                Full-stack art gallery application displaying famous paintings,
+                with search functionality, dark mode, and responsive design.
+                Includes a secured admin dashboard for CRUD operations.
               </p>
-              <a
-                href="https://github.com/Qquazld/blog-in-code"
-                target="_blank"
-                rel="noopener"
-                class="btn-github"
-                aria-label="GitHub"
-              >
-                <svg
-                  class="mr-2 h-5 w-5"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <use href="#icon-github" />
-                </svg>
-                GitHub
-              </a>
+              <div class="flex justify-end gap-2">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Tailwind CSS</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express.js</span>
+                <span class="tech-badge">MongoDB</span>
+              </div>
             </div>
-            
-            <!-- Project Card 2 -->
 
-             <div class="project-card bg-sky-950">
-              <h3 class="mb-2 text-lg text-white md:text-xl">Todo List</h3>
+            <!-- Project Card 2 -->
+            <div class="project-card">
+              <div class="flex justify-between">
+                <h3 class="mb-2 text-xl text-blue-100 md:text-2xl">
+                  Todo List
+                </h3>
+
+                <a
+                  href="https://github.com/Qquazld/todo-list"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                >
+                  <svg class="h-8 w-8" fill="currentColor" aria-hidden="true">
+                    <use href="#icon-github" />
+                  </svg>
+                </a>
+              </div>
               <video
-                class="mb-2 h-64 w-full cursor-pointer rounded-sm object-contain"
+                class="h-64 w-full cursor-pointer rounded-sm object-contain"
                 src="assets/videos/todo-list.mp4"
                 muted
                 playsinline
                 preload="metadata"
                 poster="assets/img/Todo-list.png"
-                aria-label="Todo List demo video"
+                aria-label="Todo list demo video"
               ></video>
-              <p class="mb-4 text-sm text-gray-300">
+              <p class="mb-4 text-base font-medium text-slate-400">
                 A React app to manage tasks. You can add, delete, complete, and
                 filter tasks (normal, important, done). It supports dark mode
                 and saves data in localStorage.
               </p>
-              <a
-                href="https://github.com/Qquazld/todo-list"
-                target="_blank"
-                rel="noopener"
-                class="btn-github"
-                aria-label="GitHub"
-              >
-                <svg
-                  class="mr-2 h-5 w-5"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <use href="#icon-github" />
-                </svg>
-                GitHub
-              </a>
+              <div class="flex justify-end gap-2">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">Tailwind CSS</span>
+                <span class="tech-badge">JavaScript</span>
+              </div>
             </div>
 
             <!-- Project Card 3 -->
 
-             <div class="project-card bg-sky-950">
-              <h3 class="mb-2 text-lg text-white md:text-xl">Forkify</h3>
+            <div class="project-card">
+              <div class="flex justify-between">
+                <h3 class="mb-2 text-xl text-blue-100 md:text-2xl">Forkify</h3>
+                <a
+                  href="https://github.com/Qquazld/Forkify-yann"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                >
+                  <svg class="h-8 w-8" fill="currentColor" aria-hidden="true">
+                    <use href="#icon-github" />
+                  </svg>
+                </a>
+              </div>
               <video
-                class="mb-2 h-64 w-full cursor-pointer rounded-sm object-contain"
+                class="h-64 w-full cursor-pointer rounded-sm object-contain"
                 src="assets/videos/Forkify.mp4"
                 muted
                 playsinline
@@ -544,35 +531,38 @@
                 poster="assets/img/Forkify.png"
                 aria-label="Forkify demo video"
               ></video>
-              <p class="mb-4 text-sm text-gray-300">
-                A recipe app using the Forkify API. Search for recipes, view
-                details, save favorites (via localStorage), and upload custom
-                recipes.
+              <p class="mb-4 text-base font-medium text-slate-400">
+                Recipe application built with vanilla JavaScript and the Forkify
+                API. Search for recipes, view details, save favorites (via
+                localStorage), and upload custom recipes.
               </p>
-              <a
-                href="https://github.com/Qquazld/Forkify-yann"
-                target="_blank"
-                rel="noopener"
-                class="btn-github"
-                aria-label="GitHub"
-              >
-                <svg
-                  class="mr-2 h-5 w-5"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <use href="#icon-github" />
-                </svg>
-                GitHub
-              </a>
+              <div class="flex justify-end gap-2">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JavaScript</span>
+              </div>
             </div>
-            
+
             <!-- Project Card 4 -->
 
-            <div class="project-card bg-sky-950">
-              <h3 class="mb-2 text-lg text-white md:text-xl">Blog in Code</h3>
+            <div class="project-card">
+              <div class="flex justify-between">
+                <h3 class="mb-2 text-xl text-blue-100 md:text-2xl">
+                  Blog in Code
+                </h3>
+                <a
+                  href="https://github.com/Qquazld/blog-in-code"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                >
+                  <svg class="h-8 w-8" fill="currentColor" aria-hidden="true">
+                    <use href="#icon-github" />
+                  </svg>
+                </a>
+              </div>
               <video
-                class="mb-2 h-64 w-full cursor-pointer rounded-sm object-contain"
+                class="h-64 w-full cursor-pointer rounded-sm object-contain"
                 src="assets/videos/Blog-in-Code.mp4"
                 muted
                 playsinline
@@ -580,26 +570,17 @@
                 poster="assets/img/Blog-in-Code.png"
                 aria-label="Blog in Code demo video"
               ></video>
-              <p class="mb-4 text-sm text-gray-300">
-                A simple blog built with Express.js and EJS, using only
-                server-side rendering. Full CRUD logic and a responsive UI.
+              <p class="mb-4 text-base font-medium text-slate-400">
+                A simple blog built with Node.js, Express.js and EJS, using only
+                server-side rendering. Full CRUD logic, a dark mode, and a
+                responsive UI.
               </p>
-              <a
-                href="https://github.com/Qquazld/blog-in-code"
-                target="_blank"
-                rel="noopener"
-                class="btn-github"
-                aria-label="GitHub"
-              >
-                <svg
-                  class="mr-2 h-5 w-5"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <use href="#icon-github" />
-                </svg>
-                GitHub
-              </a>
+              <div class="flex justify-end gap-2">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express.js</span>
+                <span class="tech-badge">EJS</span>
+                <span class="tech-badge">CSS</span>
+              </div>
             </div>
           </div>
         </div>
@@ -609,147 +590,135 @@
 
       <section
         id="contact"
-        class="bg-slate-900 px-4 py-16 sm:px-8 sm:py-20 md:px-16 lg:py-24"
+        class="bg-slate-900 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-24"
       >
         <div class="mx-auto max-w-5xl">
-          <h2 class="section-title">Contact</h2>
-          <div class="mt-8">
-            <form
-              action="https://formspree.io/f/xeoekrgg"
-              method="POST"
-              class="space-y-4"
-            >
-              <label for="name" class="block font-semibold text-white"
-                >Name</label
-              >
-              <input
-                id="name"
-                name="name"
-                placeholder="Enter your Name"
-                required
-                aria-required="true"
-                class="w-full rounded-sm border border-gray-600 bg-gray-700 p-2 text-white transition focus:outline-none focus:ring-1 focus:ring-white"
-              ></input>
-              <label for="email" class="block font-semibold text-white"
-                >Email</label
-              >
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                required
-                aria-required="true"
-                class="w-full rounded-sm border border-gray-600 bg-gray-700 p-2 text-white transition focus:outline-none focus:ring-1 focus:ring-white"
-              />
-              <label for="message" class="block font-semibold text-white"
-                >Message</label
-              >
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Enter your message"
-                required
-                aria-required="true"
-                class="w-full rounded-sm border border-gray-600 bg-gray-700 p-2 text-white transition focus:outline-none focus:ring-1 focus:ring-white"
-              ></textarea>
-              <button
-                type="submit"
-                class="transform rounded-sm bg-indigo-600 px-6 py-2 font-semibold text-white shadow-md transition hover:scale-105 hover:bg-indigo-700"
-              >
-                Send
-              </button>
-            </form>
+          <h2 class="section-title">Get in touch</h2>
+          <div class="mt-8 grid grid-cols-1 gap-14 md:grid-cols-2">
+            <div class="flex flex-col gap-4">
+              <!-- <p>Feel free to reach out for collaboration or opportunities.</p>
+
+              <p>You can also contact me directly via:</p> -->
+
+              <div class="flex flex-col gap-4">
+                <a
+                  href="mailto:yannletertre10@gmail.com"
+                  class="contact-info-card group"
+                >
+                  <img
+                    src="assets/img/email-svgrepo-com.svg"
+                    class="h-8 w-8"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <h4 class="text-blue-100">Email</h4>
+                  <span>yannletertre10@gmail.com</span>
+                </a>
+                <a
+                  href="https://github.com/Qquazld"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                  class="contact-info-card group"
+                >
+                  <img
+                    src="assets/img/github-cyan-svgrepo-com.svg"
+                    class="h-8 w-8"
+                    alt=""
+                    aria-hidden="true"
+                  />
+
+                  <h4 class="text-blue-100">Github</h4>
+                </a>
+                <div class="contact-info-card group">
+                  <img
+                    src="assets/img/location-pin-svgrepo-com.svg"
+                    class="h-8 w-8"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <h4 class="text-blue-100">Location</h4>
+                  <span>France</span>
+                </div>
+              </div>
+            </div>
+            <div class="contact-card">
+              <h3 class="mb-4 text-xl font-semibold text-blue-100 md:text-2xl">
+                Contact
+              </h3>
+
+              <form id="contact-form" class="space-y-4">
+                <!-- <label for="name" class="block font-semibold text-blue-100"
+                  >Name</label
+                > -->
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Enter your name"
+                  required
+                  data-fs-field
+                  class="w-full rounded-sm border border-gray-600 bg-gray-700 p-2"
+                />
+                <span data-fs-error="name" class="text-sm text-red-500"></span>
+
+                <!-- <label for="email" class="block font-semibold text-blue-100"
+                  >Email</label
+                > -->
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                  data-fs-field
+                  class="w-full rounded-sm border border-gray-600 bg-gray-700 p-2"
+                />
+                <span data-fs-error="email" class="text-sm text-red-500"></span>
+
+                <!-- <label for="message" class="block font-semibold text-blue-100"
+                  >Message</label
+                > -->
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Enter your message"
+                  required
+                  data-fs-field
+                  class="h-32 w-full rounded-sm border border-gray-600 bg-gray-700 p-2"
+                ></textarea>
+                <span
+                  data-fs-error="message"
+                  class="text-sm text-red-500"
+                ></span>
+                <div data-fs-success>
+                  Your message has been sent successfully.
+                </div>
+                <div data-fs-error>Something went wrong. Please try again.</div>
+                <button
+                  type="submit"
+                  data-fs-submit-btn
+                  class="w-full rounded-sm bg-cyan-400 py-2 font-semibold text-black shadow-md shadow-black/50 transition-all duration-150 active:translate-y-0.5 active:shadow-inner"
+                >
+                  Send message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
-
-      <!-- Contact modal -->
-
-      <div
-        id="contactModal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
-      >
-        <div
-          class="modal-animate relative w-11/12 rounded-sm border border-gray-700 bg-gray-800 p-8 text-white shadow-lg sm:w-2/3 md:w-1/2 lg:w-1/3"
-        >
-          <h2 id="modal-title" class="mb-4 text-center text-lg font-semibold">
-            Contact
-          </h2>
-
-          <button
-            id="closeModal"
-            aria-label="Close modal"
-            class="absolute right-4 top-2 text-3xl text-gray-400 transition-colors hover:text-white"
-          >
-            &times;
-          </button>
-          <form
-            action="https://formspree.io/f/xeoekrgg"
-            method="POST"
-            class="space-y-4"
-          >
-            <label for="email" class="block font-semibold text-white"
-              >Email</label
-            >
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Email"
-              required
-              aria-required="true"
-              class="w-full rounded-sm border border-gray-600 bg-gray-700 p-2 text-white transition focus:outline-none focus:ring-1 focus:ring-white"
-            />
-            <label for="message" class="block font-semibold text-white"
-              >Message</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Message..."
-              required
-              aria-required="true"
-              class="w-full rounded-sm border border-gray-600 bg-gray-700 p-2 text-white transition focus:outline-none focus:ring-1 focus:ring-white"
-            ></textarea>
-            <button
-              type="submit"
-              class="transform rounded-sm bg-indigo-600 px-6 py-2 font-semibold text-white shadow-md transition hover:scale-105 hover:bg-indigo-700"
-            >
-              Send
-            </button>
-          </form>
-        </div>
-      </div>
     </main>
 
     <!-- Footer -->
 
     <footer
-      class="flex flex-col items-center justify-center gap-y-4 border-t border-gray-400 bg-gray-900 p-6 text-center"
+      class="flex flex-col items-center justify-center gap-y-4 border-t border-gray-700/50 bg-sky-950 p-4 text-center"
     >
-      <div class="flex justify-center space-x-4">
-        <a
-          href="https://github.com/Qquazld"
-          target="_blank"
-          aria-label="GitHub"
-        >
-          <svg
-            class="h-8 w-8 text-gray-400 transition-colors hover:text-white"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <use href="#icon-github" />
-          </svg>
-        </a>
-      </div>
-      <p class="mb-2 text-sm text-gray-400">
-        &copy; <span id="footer-year"></span> Yann Letertre
+      <p class="text-base font-medium text-slate-400">
+        &copy; <span id="footer-year"> </span> | Developed by Yann Letertre
       </p>
     </footer>
-    <script src="src/js/main.js" defer></script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

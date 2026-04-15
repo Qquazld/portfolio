@@ -11,11 +11,8 @@
     animation: reveal 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  .modal-animate {
-    animation: fade-in 0.3s ease-out;
-  }
   .nav-link {
-    @apply relative flex items-center text-xl text-blue-100 transition-colors duration-200 hover:text-cyan-400;
+    @apply relative flex items-center text-xl text-slate-300 transition-colors duration-200 hover:text-cyan-400;
     overflow: hidden;
   }
 
@@ -63,7 +60,7 @@
   }
 
   .section-title {
-    @apply relative inline-block text-2xl font-bold text-blue-100 sm:text-3xl;
+    @apply relative inline-block text-2xl font-bold text-blue-100 md:text-4xl;
   }
 
   .section-title::after {
@@ -74,6 +71,7 @@
     width: 0;
     height: 3px;
     background: theme("colors.cyan.400");
+    border-radius: 2px;
     transition: width 0.6s ease;
   }
 
@@ -82,15 +80,40 @@
   }
 
   .skill-item {
-    @apply mr-1 flex h-10 w-10 -translate-x-8 items-center opacity-0 transition-all duration-500;
+    @apply flex -translate-x-8 cursor-default items-center gap-2 text-base text-slate-400 opacity-0 transition-all duration-300 ease-out hover:text-cyan-400 md:text-lg;
   }
 
-  .skill-badge {
-    @apply -translate-x-8 rounded-sm border border-cyan-400 bg-sky-950 px-3 py-1 text-base opacity-0 transition-all duration-500 sm:text-lg;
+  .skill-item img {
+    @apply h-12 w-12 object-contain transition-transform duration-300;
+  }
+
+  .skill-item:hover img {
+    @apply scale-110;
   }
 
   .project-card {
-    @apply mx-auto max-w-md rounded-sm bg-gray-800 p-4 transition-transform duration-300 hover:scale-105;
+    @apply mx-auto max-w-md rounded-md bg-sky-950 p-4 shadow-md shadow-black/50 transition-transform duration-300 hover:scale-105 hover:shadow-md hover:shadow-black/80;
+  }
+
+  .tech-badge {
+    @apply rounded-sm border border-cyan-400 bg-slate-800 px-2 py-1 text-sm text-slate-300;
+  }
+
+  .contact-card {
+    @apply rounded-md bg-sky-950 p-4 shadow-md shadow-black/50;
+  }
+
+  .contact-info-card {
+    @apply flex flex-col items-center gap-4 rounded-md bg-sky-950 px-5 py-4 font-medium text-slate-400 shadow-md shadow-black/50;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .contact-info-card:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+
+  .contact-info-card:nth-child(3) {
+    animation-delay: 0.8s;
   }
 }
 
@@ -159,5 +182,14 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }
