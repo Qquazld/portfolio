@@ -1,5 +1,3 @@
-import "../css/input.css";
-
 // Ajoute ça tout en haut de main.js, avant tout le reste
 window.scrollTo(0, 0);
 
