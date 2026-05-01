@@ -10,12 +10,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=block"
       rel="stylesheet"
     />
-    <link href="dist/output.css" rel="stylesheet" />
-    <!-- <link rel="icon" type="image/svg+xml" href="assets/img/code-icon.svg" /> -->
-    <link rel="preload" href="assets/img/avatar.png" as="image" />
+    <link rel="stylesheet" href="/src/css/input.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link
+      rel="preload"
+      href="assets/img/avatar.webp"
+      as="image"
+      type="image/webp"
+    />
     <title>Yann Letertre - Web Developer</title>
   </head>
 
@@ -23,9 +28,9 @@
     <!-- Mobile menu overlay placed at document root to avoid clipping and stacking context issues -->
     <div
       id="mobileOverlay"
-      class="pointer-events-auto fixed inset-0 z-30 bg-black/20 opacity-0 backdrop-blur-sm transition-opacity duration-300 sm:hidden"
+      class="pointer-events-none fixed inset-0 z-30 bg-black/20 opacity-0 backdrop-blur-sm transition-opacity duration-300 sm:hidden"
     ></div>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
       <symbol id="icon-github" viewBox="0 0 24 24">
         <path
           d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.091-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.467-2.382 1.235-3.222-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.005-.404 1.022.005 2.048.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.233 1.912 1.233 3.222 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.217.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
@@ -59,9 +64,15 @@
           <div
             class="hidden flex-grow justify-end gap-2 space-x-2 text-base font-semibold text-blue-100 sm:flex sm:space-x-4 md:space-x-8 md:text-lg lg:space-x-16 lg:text-xl"
           >
-            <a href="#about" class="nav-link"> About</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#about" class="nav-link" style="animation-delay: 0.1s">
+              About</a
+            >
+            <a href="#skills" class="nav-link" style="animation-delay: 0.2s"
+              >Skills</a
+            >
+            <a href="#projects" class="nav-link" style="animation-delay: 0.3s"
+              >Projects</a
+            >
             <a href="#contact" class="btn-contact"> Contact </a>
           </div>
           <!-- Mobile navigation menu -->
@@ -87,11 +98,11 @@
 
           <div
             id="mobileMenu"
-            class="pointer-events-none fixed inset-x-20 bottom-auto top-20 z-40 flex -translate-y-10 flex-col items-center justify-center gap-8 rounded-md bg-sky-950 bg-opacity-95 py-8 text-xl opacity-0 transition-all duration-300 ease-in-out sm:hidden"
+            class="bg-opacity-95 pointer-events-none fixed inset-x-20 top-20 bottom-auto z-40 flex -translate-y-10 flex-col items-center justify-center gap-8 rounded-md bg-sky-950 py-8 text-xl opacity-0 transition-all duration-300 ease-in-out sm:hidden"
           >
             <button
               id="closeMobileMenu"
-              class="absolute right-4 top-1 text-4xl text-blue-100 transition-colors hover:text-cyan-400"
+              class="absolute top-1 right-4 text-4xl text-blue-100 transition-colors hover:text-cyan-400"
               aria-label="Close menu"
             >
               &times;
@@ -118,7 +129,7 @@
           <!-- Name -->
           <div>
             <p
-              class="text-2xl font-semibold leading-tight text-cyan-400 sm:text-3xl md:text-4xl"
+              class="text-2xl leading-tight font-semibold text-cyan-400 sm:text-3xl md:text-4xl"
             >
               Hello, my name is
             </p>
@@ -155,7 +166,7 @@
               class="inline-block rounded-sm bg-cyan-400 px-3 py-2 text-xl font-semibold text-black shadow-md shadow-black/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/80 md:px-6 md:py-3 md:text-2xl"
             >
               Get in touch
-              <span class="relative top-[1px] text-2xl font-bold leading-none"
+              <span class="relative top-[1px] text-2xl leading-none font-bold"
                 >→</span
               >
             </a>
@@ -214,7 +225,7 @@
           <div class="mt-8 grid grid-cols-1 items-center gap-14 md:grid-cols-2">
             <div>
               <p
-                class="text-base font-medium leading-relaxed tracking-wide text-slate-400 md:text-lg"
+                class="text-base leading-relaxed font-medium tracking-wide text-slate-400 md:text-lg"
               >
                 <span class="text-slate-300">Full-stack web developer</span>
                 with an
@@ -222,7 +233,7 @@
                 currently open to new opportunities in web development or IT.
               </p>
               <p
-                class="mt-4 text-base font-medium leading-relaxed tracking-wide text-slate-400 md:text-lg"
+                class="mt-4 text-base leading-relaxed font-medium tracking-wide text-slate-400 md:text-lg"
               >
                 I started my career in IT support, solving problems and helping
                 users. Driven by curiosity, I completed an intensive
@@ -237,7 +248,7 @@
                 (MongoDB, Express, React, Node.js).
               </p>
               <p
-                class="mt-4 text-base font-medium leading-relaxed tracking-wide text-slate-400 md:text-lg"
+                class="mt-4 text-base leading-relaxed font-medium tracking-wide text-slate-400 md:text-lg"
               >
                 I love creating web applications that bring ideas to life. I am
                 continuously improving my skills and eager to contribute to
@@ -254,7 +265,7 @@
                     loading="lazy"
                     width="288"
                     height="288"
-                    src="assets/img/avatar.png"
+                    src="assets/img/avatar.webp"
                     alt="Portrait of Yann Letertre, full-stack web developer"
                     class="w-48 rounded-full object-cover md:w-64 lg:w-72"
                   />
@@ -266,6 +277,7 @@
       </section>
 
       <!-- Skills section -->
+
       <section
         id="skills"
         class="bg-slate-900 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-24"
@@ -306,7 +318,6 @@
                 </li>
               </ul>
               <!-- Dev tools -->
-
               <div data-skills-group class="mt-14 md:mt-24">
                 <h3
                   class="mb-4 text-xl font-semibold text-slate-300 md:text-2xl"
@@ -321,18 +332,10 @@
                   <li class="skill-item">
                     <img
                       src="assets/img/github-242-svgrepo-com.svg"
-                      alt="Github logo"
+                      alt="GitHub logo"
                     />
-                    <span>Github</span>
+                    <span>GitHub</span>
                   </li>
-                  <!-- <li class="skill-item">
-                <img
-                  src="assets/img/brand-github-copilot.svg"
-                  alt="Github Copilot logo"
-                  class="skill-item"
-                />
-                <span>Github Copilot</span>
-              </li> -->
                   <li class="skill-item">
                     <img
                       src="assets/img/postman-icon-svgrepo-com.svg"
@@ -350,7 +353,6 @@
                 </ul>
               </div>
             </div>
-
             <!-- Backend -->
             <div data-skills-group class="flex flex-col items-start">
               <h3 class="mb-4 text-xl font-semibold text-slate-300 md:text-2xl">
@@ -378,17 +380,6 @@
                   />
                   <span>MongoDB</span>
                 </li>
-                <!-- <li class="skill-item">
-                  <img src="assets/img/ruby-svgrepo-com.svg" alt="Ruby logo" />
-                  <span>Ruby</span>
-                </li> -->
-                <!-- <li class="skill-item">
-                  <img
-                    src="assets/img/rails-svgrepo-com.svg"
-                    alt="Rails logo"
-                  />
-                  <span>Rails</span>
-                </li> -->
               </ul>
               <div data-skills-group class="mt-14 md:mt-24">
                 <h3
@@ -430,13 +421,16 @@
             <!-- Project Card 1 -->
             <div class="project-card">
               <div class="flex justify-between">
-                <h3 class="mb-2 text-xl text-blue-100 md:text-2xl">Artfolio</h3>
-
+                <h3
+                  class="mb-2 text-xl font-semibold text-slate-300 md:text-2xl"
+                >
+                  Artfolio
+                </h3>
                 <a
                   href="https://github.com/Qquazld/artfolio"
                   target="_blank"
-                  rel="noopener"
-                  aria-label="GitHub"
+                  rel="noopener noreferrer"
+                  aria-label="Artfolio on GitHub"
                 >
                   <svg class="h-8 w-8" fill="currentColor" aria-hidden="true">
                     <use href="#icon-github" />
@@ -449,7 +443,7 @@
                 muted
                 playsinline
                 preload="metadata"
-                poster="assets/img/Artfolio.png"
+                poster="assets/img/Artfolio.webp"
                 aria-label="Artfolio demo video"
               ></video>
               <p class="mb-4 text-base font-medium text-slate-400">
@@ -465,19 +459,19 @@
                 <span class="tech-badge">MongoDB</span>
               </div>
             </div>
-
             <!-- Project Card 2 -->
             <div class="project-card">
               <div class="flex justify-between">
-                <h3 class="mb-2 text-xl text-blue-100 md:text-2xl">
+                <h3
+                  class="mb-2 text-xl font-semibold text-slate-300 md:text-2xl"
+                >
                   Todo List
                 </h3>
-
                 <a
                   href="https://github.com/Qquazld/todo-list"
                   target="_blank"
-                  rel="noopener"
-                  aria-label="GitHub"
+                  rel="noopener noreferrer"
+                  aria-label="Todo List on GitHub"
                 >
                   <svg class="h-8 w-8" fill="currentColor" aria-hidden="true">
                     <use href="#icon-github" />
@@ -490,7 +484,7 @@
                 muted
                 playsinline
                 preload="metadata"
-                poster="assets/img/Todo-list.png"
+                poster="assets/img/Todo-list.webp"
                 aria-label="Todo list demo video"
               ></video>
               <p class="mb-4 text-base font-medium text-slate-400">
@@ -505,17 +499,19 @@
                 <span class="tech-badge">JavaScript</span>
               </div>
             </div>
-
             <!-- Project Card 3 -->
-
             <div class="project-card">
               <div class="flex justify-between">
-                <h3 class="mb-2 text-xl text-blue-100 md:text-2xl">Forkify</h3>
+                <h3
+                  class="mb-2 text-xl font-semibold text-slate-300 md:text-2xl"
+                >
+                  Forkify
+                </h3>
                 <a
                   href="https://github.com/Qquazld/Forkify-yann"
                   target="_blank"
-                  rel="noopener"
-                  aria-label="GitHub"
+                  rel="noopener noreferrer"
+                  aria-label="Forkify on GitHub"
                 >
                   <svg class="h-8 w-8" fill="currentColor" aria-hidden="true">
                     <use href="#icon-github" />
@@ -528,7 +524,7 @@
                 muted
                 playsinline
                 preload="metadata"
-                poster="assets/img/Forkify.png"
+                poster="assets/img/Forkify.webp"
                 aria-label="Forkify demo video"
               ></video>
               <p class="mb-4 text-base font-medium text-slate-400">
@@ -542,19 +538,19 @@
                 <span class="tech-badge">JavaScript</span>
               </div>
             </div>
-
             <!-- Project Card 4 -->
-
             <div class="project-card">
               <div class="flex justify-between">
-                <h3 class="mb-2 text-xl text-blue-100 md:text-2xl">
+                <h3
+                  class="mb-2 text-xl font-semibold text-slate-300 md:text-2xl"
+                >
                   Blog in Code
                 </h3>
                 <a
                   href="https://github.com/Qquazld/blog-in-code"
                   target="_blank"
-                  rel="noopener"
-                  aria-label="GitHub"
+                  rel="noopener noreferrer"
+                  aria-label="Blog in Code on GitHub"
                 >
                   <svg class="h-8 w-8" fill="currentColor" aria-hidden="true">
                     <use href="#icon-github" />
@@ -567,7 +563,7 @@
                 muted
                 playsinline
                 preload="metadata"
-                poster="assets/img/Blog-in-Code.png"
+                poster="assets/img/Blog-in-Code.webp"
                 aria-label="Blog in Code demo video"
               ></video>
               <p class="mb-4 text-base font-medium text-slate-400">
@@ -595,109 +591,89 @@
         <div class="mx-auto max-w-5xl">
           <h2 class="section-title">Get in touch</h2>
           <div class="mt-8 grid grid-cols-1 gap-14 md:grid-cols-2">
-            <div class="flex flex-col gap-4">
-              <!-- <p>Feel free to reach out for collaboration or opportunities.</p>
+            <div class="flex flex-col items-start gap-8">
+              <p class="text-base text-slate-400 md:text-lg">
+                Feel free to reach out for collaboration or opportunities.
+              </p>
+              <p class="text-base text-slate-400 md:text-lg">
+                You can also contact me directly:
+              </p>
 
-              <p>You can also contact me directly via:</p> -->
+              <a href="mailto:yannletertre10@gmail.com" class="contact-info">
+                <img
+                  src="assets/img/email-svgrepo-com.svg"
+                  class="h-6 w-6"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>Email</span>
+              </a>
+              <a
+                href="https://github.com/Qquazld"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-info"
+              >
+                <img
+                  src="assets/img/github-cyan-svgrepo-com.svg"
+                  class="h-6 w-6"
+                  alt=""
+                  aria-hidden="true"
+                />
 
-              <div class="flex flex-col gap-4">
-                <a
-                  href="mailto:yannletertre10@gmail.com"
-                  class="contact-info-card group"
-                >
-                  <img
-                    src="assets/img/email-svgrepo-com.svg"
-                    class="h-8 w-8"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                  <h4 class="text-blue-100">Email</h4>
-                  <span>yannletertre10@gmail.com</span>
-                </a>
-                <a
-                  href="https://github.com/Qquazld"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="GitHub"
-                  class="contact-info-card group"
-                >
-                  <img
-                    src="assets/img/github-cyan-svgrepo-com.svg"
-                    class="h-8 w-8"
-                    alt=""
-                    aria-hidden="true"
-                  />
-
-                  <h4 class="text-blue-100">Github</h4>
-                </a>
-                <div class="contact-info-card group">
-                  <img
-                    src="assets/img/location-pin-svgrepo-com.svg"
-                    class="h-8 w-8"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                  <h4 class="text-blue-100">Location</h4>
-                  <span>France</span>
-                </div>
+                <span>GitHub</span>
+              </a>
+              <div class="contact-info">
+                <img
+                  src="assets/img/location-pin-svgrepo-com.svg"
+                  class="h-6 w-6"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>France</span>
               </div>
             </div>
             <div class="contact-card">
-              <h3 class="mb-4 text-xl font-semibold text-blue-100 md:text-2xl">
+              <h3 class="mb-4 text-xl font-semibold text-slate-300 md:text-2xl">
                 Contact
               </h3>
 
-              <form id="contact-form" class="space-y-4">
-                <!-- <label for="name" class="block font-semibold text-blue-100"
-                  >Name</label
-                > -->
+              <form
+                id="contact-form"
+                action="https://formspree.io/f/xeoekrgg"
+                method="POST"
+                class="space-y-4"
+              >
+                <label for="name" class="sr-only">Name</label>
                 <input
                   id="name"
                   name="name"
                   type="text"
                   placeholder="Enter your name"
                   required
-                  data-fs-field
                   class="w-full rounded-sm border border-gray-600 bg-gray-700 p-2"
                 />
-                <span data-fs-error="name" class="text-sm text-red-500"></span>
-
-                <!-- <label for="email" class="block font-semibold text-blue-100"
-                  >Email</label
-                > -->
+                <label for="email" class="sr-only">Email</label>
                 <input
                   id="email"
                   name="email"
                   type="email"
                   placeholder="Enter your email"
                   required
-                  data-fs-field
                   class="w-full rounded-sm border border-gray-600 bg-gray-700 p-2"
                 />
-                <span data-fs-error="email" class="text-sm text-red-500"></span>
 
-                <!-- <label for="message" class="block font-semibold text-blue-100"
-                  >Message</label
-                > -->
+                <label for="message" class="sr-only">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   placeholder="Enter your message"
                   required
-                  data-fs-field
                   class="h-32 w-full rounded-sm border border-gray-600 bg-gray-700 p-2"
                 ></textarea>
-                <span
-                  data-fs-error="message"
-                  class="text-sm text-red-500"
-                ></span>
-                <div data-fs-success>
-                  Your message has been sent successfully.
-                </div>
-                <div data-fs-error>Something went wrong. Please try again.</div>
+
                 <button
                   type="submit"
-                  data-fs-submit-btn
                   class="w-full rounded-sm bg-cyan-400 py-2 font-semibold text-black shadow-md shadow-black/50 transition-all duration-150 active:translate-y-0.5 active:shadow-inner"
                 >
                   Send message
@@ -718,7 +694,6 @@
         &copy; <span id="footer-year"> </span> | Developed by Yann Letertre
       </p>
     </footer>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

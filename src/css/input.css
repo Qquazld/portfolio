@@ -1,6 +1,25 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Advent Pro", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background-color: #0f172a;
+}
+
+section:not(#home) {
+  opacity: 0;
+  transform: translateY(96px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+section:not(#home).is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 @layer components {
   section {
@@ -13,6 +32,7 @@
 
   .nav-link {
     @apply relative flex items-center text-xl text-slate-300 transition-colors duration-200 hover:text-cyan-400;
+    animation: slide-in-nav 0.5s ease-out both;
     overflow: hidden;
   }
 
@@ -42,21 +62,12 @@
     left: -100%;
     width: 20%;
     height: 100%;
-    background: theme("colors.cyan.400");
+    background: var(--color-cyan-400);
     z-index: 0;
   }
 
   .btn-contact:hover::before {
     animation: swipe 0.4s ease forwards;
-  }
-
-  .btn-contact span {
-    position: relative;
-    z-index: 1;
-  }
-
-  .avatar-ring {
-    animation: spin-slow 8s linear infinite;
   }
 
   .section-title {
@@ -70,7 +81,7 @@
     left: 0;
     width: 0;
     height: 3px;
-    background: theme("colors.cyan.400");
+    background: var(--color-cyan-400);
     border-radius: 2px;
     transition: width 0.6s ease;
   }
@@ -92,39 +103,19 @@
   }
 
   .project-card {
-    @apply mx-auto max-w-md rounded-md bg-sky-950 p-4 shadow-md shadow-black/50 transition-transform duration-300 hover:scale-105 hover:shadow-md hover:shadow-black/80;
+    @apply mx-auto max-w-sm overflow-hidden rounded-md bg-sky-950 p-4 shadow-md shadow-black/50 transition-transform duration-300 hover:scale-105 hover:shadow-md hover:shadow-black/80;
   }
 
   .tech-badge {
     @apply rounded-sm border border-cyan-400 bg-slate-800 px-2 py-1 text-sm text-slate-300;
   }
 
+  .contact-info {
+    @apply flex items-center gap-2 text-center text-base font-medium text-slate-300 transition-colors hover:text-cyan-400 md:text-lg;
+  }
+
   .contact-card {
     @apply rounded-md bg-sky-950 p-4 shadow-md shadow-black/50;
-  }
-
-  .contact-info-card {
-    @apply flex flex-col items-center gap-4 rounded-md bg-sky-950 px-5 py-4 font-medium text-slate-400 shadow-md shadow-black/50;
-    animation: float 4s ease-in-out infinite;
-  }
-
-  .contact-info-card:nth-child(2) {
-    animation-delay: 0.4s;
-  }
-
-  .contact-info-card:nth-child(3) {
-    animation-delay: 0.8s;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -150,46 +141,23 @@
   }
 }
 
-@keyframes underline-loop {
-  0% {
-    width: 0;
-    left: 0;
-  }
-  50% {
-    width: 100%;
-    left: 0;
-  }
-  100% {
-    width: 0;
-    left: 100%;
-  }
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes reveal {
   0% {
     opacity: 0;
-    transform: translateY(60%);
+    transform: translateY(40%);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
+@keyframes slide-in-nav {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
   }
-  50% {
-    transform: translateY(-8px);
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
