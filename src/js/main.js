@@ -1,8 +1,5 @@
 import "../css/input.css";
 
-// Ajoute ça tout en haut de main.js, avant tout le reste
-window.scrollTo(0, 0);
-
 // DOM ELEMENTS
 const header = document.getElementById("header");
 const homeSection = document.getElementById("home");
@@ -121,7 +118,7 @@ function loop() {
     // Deleting
     typewriterEl.textContent = text.substring(0, i--);
 
-    if (i < 0) {
+    if (i <= 0) {
       isDeleting = false;
       i = 0;
       return setTimeout(loop, 500); // start pause

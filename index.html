@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=block"
+      href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
@@ -21,6 +21,10 @@
       type="image/webp"
     />
     <title>Yann Letertre - Web Developer</title>
+    <meta property="og:title" content="Yann Letertre – Web Developer" />
+    <meta property="og:description" content="Full-stack web developer" />
+    <meta property="og:url" content="https://yannletertre.netlify.app" />
+    <meta property="og:type" content="website" />
   </head>
 
   <body class="bg-slate-900 font-sans text-white">
@@ -29,7 +33,7 @@
       id="mobileOverlay"
       class="pointer-events-none fixed inset-0 z-30 bg-black/20 opacity-0 backdrop-blur-sm transition-opacity duration-300 sm:hidden"
     ></div>
-    <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
       <symbol id="icon-github" viewBox="0 0 24 24">
         <path
           d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.091-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.467-2.382 1.235-3.222-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.005-.404 1.022.005 2.048.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.77.84 1.233 1.912 1.233 3.222 0 4.61-2.804 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.217.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
@@ -51,7 +55,7 @@
           <div>
             <a
               href="#home"
-              class="font-logo relative flex h-12 w-12 items-center justify-center rounded-sm bg-gradient-to-tr from-blue-900 to-cyan-400 p-0.5 text-lg font-bold transition hover:scale-105 sm:text-xl"
+              class="font-logo relative flex h-12 w-12 items-center justify-center rounded-sm bg-linear-to-tr from-blue-900 to-cyan-400 p-0.5 text-lg font-bold transition hover:scale-105 sm:text-xl"
             >
               <span
                 class="flex h-full w-full items-center justify-center rounded-sm bg-slate-900 text-blue-100 transition-colors hover:text-cyan-400"
@@ -61,7 +65,7 @@
           </div>
           <!-- Desktop navigation links -->
           <div
-            class="hidden flex-grow justify-end gap-2 space-x-2 text-base font-semibold text-blue-100 sm:flex sm:space-x-4 md:space-x-8 md:text-lg lg:space-x-16 lg:text-xl"
+            class="hidden grow justify-end gap-2 space-x-2 text-base font-semibold text-blue-100 sm:flex sm:space-x-4 md:space-x-8 md:text-lg lg:space-x-16 lg:text-xl"
           >
             <a href="#about" class="nav-link" style="animation-delay: 0.1s">
               About</a
@@ -97,7 +101,7 @@
 
           <div
             id="mobileMenu"
-            class="bg-opacity-95 pointer-events-none fixed inset-x-20 top-20 bottom-auto z-40 flex -translate-y-10 flex-col items-center justify-center gap-8 rounded-md bg-sky-950 py-8 text-xl opacity-0 transition-all duration-300 ease-in-out sm:hidden"
+            class="pointer-events-none fixed inset-x-20 top-20 bottom-auto z-40 flex -translate-y-10 flex-col items-center justify-center gap-8 rounded-md bg-sky-950/95 py-8 text-xl opacity-0 transition-all duration-300 ease-in-out sm:hidden"
           >
             <button
               id="closeMobileMenu"
@@ -118,7 +122,7 @@
 
     <!-- Main content -->
 
-    <main>
+    <main id="main-content">
       <!-- Home section / Hero -->
       <section
         id="home"
@@ -165,7 +169,7 @@
               class="inline-block rounded-sm bg-cyan-400 px-3 py-2 text-xl font-semibold text-black shadow-md shadow-black/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/80 md:px-6 md:py-3 md:text-2xl"
             >
               Get in touch
-              <span class="relative top-[1px] text-2xl leading-none font-bold"
+              <span class="relative top-px text-2xl leading-none font-bold"
                 >→</span
               >
             </a>
@@ -257,11 +261,10 @@
             <!-- Avatar -->
             <div class="mx-auto">
               <div
-                class="cursor-pointer rounded-full bg-gradient-to-tr from-blue-900 to-cyan-400 p-1 opacity-90 transition-all duration-500 ease-in-out hover:opacity-100 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+                class="cursor-pointer rounded-full bg-linear-to-tr from-blue-900 to-cyan-400 p-1 opacity-90 transition-all duration-500 ease-in-out hover:opacity-100 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
               >
                 <div class="rounded-full bg-slate-900 p-1.5">
                   <img
-                    loading="lazy"
                     width="288"
                     height="288"
                     src="assets/img/avatar.webp"
@@ -443,6 +446,7 @@
                 playsinline
                 preload="metadata"
                 poster="assets/img/Artfolio.webp"
+                title="Artfolio demo video"
                 aria-label="Artfolio demo video"
               ></video>
               <p class="mb-4 text-base font-medium text-slate-400">
@@ -484,6 +488,7 @@
                 playsinline
                 preload="metadata"
                 poster="assets/img/Todo-list.webp"
+                title="Todo list demo video"
                 aria-label="Todo list demo video"
               ></video>
               <p class="mb-4 text-base font-medium text-slate-400">
@@ -524,6 +529,7 @@
                 playsinline
                 preload="metadata"
                 poster="assets/img/Forkify.webp"
+                title="Forkify demo video"
                 aria-label="Forkify demo video"
               ></video>
               <p class="mb-4 text-base font-medium text-slate-400">
@@ -563,6 +569,7 @@
                 playsinline
                 preload="metadata"
                 poster="assets/img/Blog-in-Code.webp"
+                title="Blog in Code demo video"
                 aria-label="Blog in Code demo video"
               ></video>
               <p class="mb-4 text-base font-medium text-slate-400">
