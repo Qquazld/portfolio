@@ -1,6 +1,8 @@
 # Yann Letertre — Web Developer Portfolio
 
-https://github.com/Qquazld/portfolio
+**Live site:** [yannletertre.netlify.app](https://yannletertre.netlify.app)
+
+[Repository](https://github.com/Qquazld/portfolio)
 
 ## Tech Stack
 
